@@ -1,0 +1,44 @@
+@use '../abstracts' as *;
+
+@each $theme-name, $theme-map in $themes {
+  @if $theme-name == light {
+    :root {
+      @each $key, $value in $theme-map {
+        --#{$key}: #{$value};
+      }
+    }
+  } @else {
+    [data-theme="#{$theme-name}"] {
+      @each $key, $value in $theme-map {
+        --#{$key}: #{$value};
+      }
+    }
+  }
+}
+
+body {
+	font-family: 'Inter', 'Verdana', sans-serif;
+	font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.25;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: $container-width;
+  margin: 0 auto;
+}
+
+.title {
+  margin-bottom: 40px;
+  font-size: 60px;
+}
+
+.text-accent {
+  font-style: italic;
+  color: var(--accent);
+}

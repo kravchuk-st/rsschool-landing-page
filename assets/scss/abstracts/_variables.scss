@@ -1,0 +1,33 @@
+// Розміри
+$container-width: 1360px;
+$border-radius: 12px;
+$gap-sm: 8px;
+$gap-md: 16px;
+$gap-lg: 32px;
+
+// Точки перелому
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+// Теми (мапа для генерації CSS-змінних)
+$themes: (
+  light: (
+    bg: #e1d4c9,
+    text: #403f3d,
+    accent: #a9754f,
+    inverse: #e1d4c9,
+    border: #c1b6ad,
+    border-hover: #665f55,
+    overlay: #403f3d80
+  ),
+  dark: (
+    bg: #292826,
+    surface: #241d18,
+    text: #f0e8df,
+    text-muted: #b3a493,
+    accent: #d99b6c,
+    accent-dark: #a9754f,
+    border: #3a2f26
+  )
+);

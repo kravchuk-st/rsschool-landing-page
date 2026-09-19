@@ -1,0 +1,21 @@
+.nav {
+	&__list {
+		margin-top: -8px;
+		margin-left: -43px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		column-gap: 37px;
+	}
+
+	&__link {
+		padding: 6px 0;
+		color: var(--text);
+		border: 2px solid transparent;
+		
+
+		&:hover {
+			border-bottom: 2px solid var(--text);
+		}
+	}
+}

@@ -1,0 +1,27 @@
+.banner {
+	padding-top: 15px;
+	.wrapper {
+		padding: 100px;
+		background: center / cover no-repeat url("/assets/img/banner.avif");
+		border-radius: 40px;
+	}
+
+	&__content {
+		max-width: 530px;
+		display: flex;
+		flex-direction: column;
+		row-gap: 41px;
+		color: var(--inverse);
+	}
+
+	&__title {
+		font-size: 72px;
+		line-height: 1.05;
+	}
+
+	&__descr {
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 1.5;
+	}
+}
