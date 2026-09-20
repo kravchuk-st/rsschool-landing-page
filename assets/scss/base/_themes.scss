@@ -40,5 +40,12 @@ body {
 
 .text-accent {
   font-style: italic;
-  color: var(--accent);
+  color: #b0907a;
+}
+
+@media screen and (max-width: 992px) {
+  .wrapper {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }

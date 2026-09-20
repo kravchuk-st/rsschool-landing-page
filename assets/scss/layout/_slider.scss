@@ -1,8 +1,4 @@
 .carousel {
-	.wrapper {
-		padding: 0;
-	}
-
 	.title {
 		text-align: center;
 	}
@@ -46,7 +42,7 @@
 				transition: background-color 0.3s ease-in-out;
 
 				&.active {
-					background-color: var(--border-hover);
+					background-color: var(--border-inverse);
 				}
 			}
 		}

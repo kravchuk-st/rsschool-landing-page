@@ -12,10 +12,48 @@
 		padding: 6px 0;
 		color: var(--text);
 		border: 2px solid transparent;
-		
+		transition: border-color .3s ease-in-out;
 
 		&:hover {
 			border-bottom: 2px solid var(--text);
 		}
 	}
+}
+
+@media screen and (max-width: 992px) {
+	.nav__list,
+	.header .actions {
+		margin: 0;
+	}
+}
+
+@media screen and (max-width: 830px) {
+  .nav {
+    position: fixed;
+    z-index: 15;
+    top: 0;
+    right: -100%;
+    width: min(100vw, 768px);
+    height: 100vh;
+    background-color: var(--bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 25px;
+    opacity: 0;
+    visibility: hidden;
+    transition: right 0.3s linear, opacity 0.3s ease, visibility 0.3s ease;
+
+    &.open {
+      right: 0;
+      opacity: 1;
+      visibility: visible;
+
+			.nav__list {
+				flex-direction: column;
+				row-gap: 30px;
+			}
+    }
+  }
 }

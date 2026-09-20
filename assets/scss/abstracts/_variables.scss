@@ -14,20 +14,23 @@ $breakpoint-desktop: 1024px;
 $themes: (
   light: (
     bg: #e1d4c9,
+    bg-footer: #665f55,
     text: #403f3d,
     accent: #a9754f,
     inverse: #e1d4c9,
     border: #c1b6ad,
-    border-hover: #665f55,
-    overlay: #403f3d80
+    border-inverse: #665f55,
+    overlay: #403f3d80,
+
   ),
   dark: (
     bg: #292826,
-    surface: #241d18,
-    text: #f0e8df,
-    text-muted: #b3a493,
-    accent: #d99b6c,
-    accent-dark: #a9754f,
-    border: #3a2f26
+    bg-footer: #403f3d,
+    text: #e1d4c9,
+    accent: #b0907a,
+    inverse: #e1d4c9,
+    border: #665f55,
+    border-inverse: #c1b6ad,
+    overlay: #29282680
   )
 );

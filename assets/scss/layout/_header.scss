@@ -2,7 +2,6 @@
 	margin-top: 20px;
 	
 	.wrapper {
-		padding: 0;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -21,5 +20,15 @@
 		display: flex;
 		align-items: center;
 		column-gap: 22px;
+	}
+
+	.wrapper:not(:has(.nav.open)) .overlay {
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	.wrapper:has(.nav.open) .overlay {
+		opacity: 1;
+		visibility: visible;
 	}
 }

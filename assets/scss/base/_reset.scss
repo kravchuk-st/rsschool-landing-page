@@ -11,3 +11,8 @@ section {
 .sprite {
 	display: none;
 }
+
+.disable-scroll {
+  overflow: hidden;
+  user-select: none;
+}

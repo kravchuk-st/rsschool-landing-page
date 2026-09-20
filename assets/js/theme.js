@@ -1,7 +1,8 @@
 class ThemeSwitcher {
   constructor() {
     this.root = document.documentElement;
-    this.toggleBtn = document.getElementById('theme-toggle');
+    this.toggleBtn = document.querySelector('.theme-btn');
+    this.toggleBtnIcons = [...this.toggleBtn?.querySelectorAll('.theme-btn__icon')];
     this.init();
   }
 
@@ -21,7 +22,7 @@ class ThemeSwitcher {
       });
   }
 
-  setTheme(theme) {
+  setTheme(theme) {    
     this.root.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
     this.updateIcon(theme);
@@ -33,9 +34,9 @@ class ThemeSwitcher {
   }
 
   updateIcon(theme) {
-    if (this.toggleBtn) {
-      this.toggleBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
-    }
+    this.toggleBtnIcons.forEach(el => {
+      el.classList.toggle('active', el.classList.contains(`theme-btn__icon_${theme}`));
+    })
   }
 }
 

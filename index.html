@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -19,31 +19,38 @@
 			<div class="wrapper">
 				<div class="logo">
 					<a href="./" class="logo__link">
-						<img src="./assets/img/logo.svg" alt="logo" class="logo__img" width="100" height="60">
+						<svg class="logo__img" width="100" height="60">
+							<use xlink:href="./assets/img/logo.svg#logo"></use>
+						</svg>
 					</a>
 				</div>
 				<nav class="nav">
 					<ul class="nav__list list-reset">
-						<li class="nav__item"><a href="#" class="nav__link">Favorite coffee</a></li>
-						<li class="nav__item"><a href="#" class="nav__link">About</a></li>
-						<li class="nav__item"><a href="#" class="nav__link">Mobile app</a></li>
-						<li class="nav__item"><a href="#" class="nav__link">Contact us</a></li>
+						<li class="nav__item"><a href="#favorite" class="nav__link">Favorite coffee</a></li>
+						<li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+						<li class="nav__item"><a href="#app" class="nav__link">Mobile app</a></li>
+						<li class="nav__item"><a href="#footer" class="nav__link">Contact us</a></li>
 					</ul>
 				</nav>
 				<div class="actions">
 					<button class="theme-btn btn-reset" aria-label="Toggle theme">
 						<svg class="theme-btn__icon theme-btn__icon_light active" aria-hidden="true">
-							<use xlink:href="/assets/img/svg/sun.svg#sun"></use>
+							<use xlink:href="./assets/img/svg/sun.svg#sun"></use>
 						</svg>
 						<svg class="theme-btn__icon theme-btn__icon_dark" aria-hidden="true">
-							<use xlink:href="/assets/img/svg/moon.svg#moon"></use>
+							<use xlink:href="./assets/img/svg/moon.svg#moon"></use>
 						</svg>
 					</button>
-					<button class="menu-btn btn-reset"><span class="menu-btn__text">Menu</span>
+					<a href="./catalog" class="menu-btn btn-reset"><span class="menu-btn__text">Menu</span>
 						<svg class="menu-btn__icon" aria-hidden="true">
-							<use xlink:href="/assets/img/svg/cup.svg#cup"></use>
+							<use xlink:href="./assets/img/svg/cup.svg#cup"></use>
 						</svg>
-					</button>
+					</a>
+					<button class="burger btn-reset" aria-label="open burger">
+            <span class="burger__line" aria-hidden="true"></span>
+            <span class="burger__line" aria-hidden="true"></span>
+          </button>
+					<span class="overlay" aria-hidden="true"></span>
 				</div>
 			</div>
 		</header>
@@ -52,13 +59,13 @@
 			<section class="banner">
 				<div class="wrapper">
 					<div class="banner__content">
-						<h1 class="banner__title"><span class="text-accent">Enjoy</span> premium coffee at our charming cafe</h1>
+						<h1 class="banner__title"><em class="text-accent">Enjoy</em> premium coffee at our charming cafe</h1>
 						<p class="banner__descr">
 							With its inviting atmosphere and delicious coffee options, the Coffee House Resource is a popular destination for coffee lovers and those seeking a warm and inviting space to enjoy their favorite beverage.
 						</p>
-						<a href="" class="banner__link btn btn-reset">Menu
+						<a href="./catalog" class="banner__link btn btn-reset">Menu
 							<svg class="icon" aria-hidden="true">
-								<use xlink:href="/assets/img/svg/cup.svg#cup"></use>
+								<use xlink:href="./assets/img/svg/cup.svg#cup"></use>
 							</svg>
 						</a>
 					</div>
@@ -66,13 +73,13 @@
 				</div>
 			</section>
 
-			<section class="carousel">
+			<section class="carousel" id="favorite">
 				<div class="wrapper">
-					<h2 class="title">Choose your <span class="text-accent">favorite</span> coffee</h2>
+					<h2 class="title">Choose your <em class="text-accent">favorite</em> coffee</h2>
 					<div class="slider">
 						<div class="slider__wrapper">
 							<div class="slide">
-								<img src="/assets/img/slider/0.avif" alt="" class="slide__img">
+								<img src="./assets/img/slider/0.avif" alt="" class="slide__img">
 								<p class="slide__title">S’mores Frappuccino</p>
 								<p class="slide__descr">
 									This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.
@@ -99,101 +106,116 @@
 				</div>
 			</section>
 
-			<section class="gallery">
+			<section class="gallery" id="about">
 				<div class="wrapper">
 					<h2 class="title">
-						Resource is <span class="text-accent">the perfect and cozy place</span> where you can enjoy a variety of hot beverages, relax, catch up with friends, or get some work done.
+						Resource is <em class="text-accent">the perfect and cozy place</em> where you can enjoy a variety of hot beverages, relax, catch up with friends, or get some work done.
 					</h2>
 					<div class="imgs">
 						<div class="imgs__item">
-							<img src="/assets/img/gallery/1.avif" alt="Gallery image 1" class="imgs__img">
+							<img src="./assets/img/gallery/1.avif" alt="Gallery image 1" class="imgs__img">
 						</div>
 						<div class="imgs__item">
-							<img src="/assets/img/gallery/2.avif" alt="Gallery image 2" class="imgs__img">
+							<img src="./assets/img/gallery/2.avif" alt="Gallery image 2" class="imgs__img">
 						</div>
 						<div class="imgs__item">
-							<img src="/assets/img/gallery/3.avif" alt="Gallery image 3" class="imgs__img">
+							<img src="./assets/img/gallery/3.avif" alt="Gallery image 3" class="imgs__img">
 						</div>
 						<div class="imgs__item">
-							<img src="/assets/img/gallery/4.avif" alt="Gallery image 4" class="imgs__img">
+							<img src="./assets/img/gallery/4.avif" alt="Gallery image 4" class="imgs__img">
 						</div>
 					</div>
 				</div>
 			</section>
 
-			<section class="app">
+			<section class="app" id="app">
 				<div class="wrapper">
 					<div class="app__info">
-						<h2 class="title"><span class="text-accent">Download</span> our app to&nbsp;start ordering</h2>
+						<h2 class="title"><em class="text-accent">Download</em> our app to&nbsp;start ordering</h2>
 						<p class="app__descr">
 							Download the Resource app today and experience the comfort of ordering your favorite coffee from wherever you are
 						</p>
 						<div class="app__links">
 							<a href="#" class="app__link" aria-label="App Store">
 								<svg class="icon" aria-hidden="true">
-									<use xlink:href="/assets/img/svg/store.svg#link"></use>
+									<use xlink:href="./assets/img/svg/store.svg#link"></use>
 								</svg>
 							</a>
 							<a href="#" class="app__link app__link_gp" aria-label="Google Play">
 								<svg class="icon" aria-hidden="true">
-									<use xlink:href="/assets/img/svg/play.svg#link"></use>
+									<use xlink:href="./assets/img/svg/play.svg#link"></use>
 								</svg>
 							</a>
 						</div>
 					</div>
-					<img src="/assets/img/phone.avif" alt="" class="app__img">
+					<img src="./assets/img/phone.avif" alt="" class="app__img">
 				</div>
 			</section>
 		</main>
 
-		<footer class="footer">
+		<footer class="footer" id="footer">
 			<div class="wrapper">
 				<div class="promo">
 					<h2 class="title">Sip, Savor, Smile. 
-						<span class="text-accent">It’s coffee time!</span>
+						<em class="text-accent">It’s coffee time!</em>
 					</h2>
 					<ul class="social__list list-reset">
-						<li class="social__item"><a href="" class="social__link" aria-label="Twitter">
-							<svg class="icon" aria-hidden="true">
-								<use xlink:href="/assets/img/svg/social/twitter.svg#link"></use>
-							</svg>
-						</a></li>
-						<li class="social__item"><a href="" class="social__link" aria-label="Instagram">
-							<svg class="icon" aria-hidden="true">
-								<use xlink:href="/assets/img/svg/social/instagram.svg#link"></use>
-							</svg>
-						</a></li>
-						<li class="social__item"><a href="" class="social__link" aria-label="Facebook">
-							<svg class="icon" aria-hidden="true">
-								<use xlink:href="/assets/img/svg/social/facebook.svg#link"></use>
-							</svg>
-						</a></li>
+						<li class="social__item">
+							<a href="" class="social__link" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+								<svg class="icon" aria-hidden="true">
+									<use xlink:href="./assets/img/svg/social/twitter.svg#link"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="social__item">
+							<a href="" class="social__link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+								<svg class="icon" aria-hidden="true">
+									<use xlink:href="./assets/img/svg/social/instagram.svg#link"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="social__item">
+							<a href="" class="social__link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+								<svg class="icon" aria-hidden="true">
+									<use xlink:href="./assets/img/svg/social/facebook.svg#link"></use>
+								</svg>
+							</a>
+						</li>
 					</ul>
 				</div>
 				<div class="contacts">
 					<p class="contacts__title">Contact us</p>
 					<ul class="contacts__list list-reset">
-						<li class="contacts__item"><a href="" class="contacts__link">
-							<svg class="contacts__icon" aria-hidden="true">
-								<use xlink:href="/assets/img/svg/contact/map.svg#link"></use>
-							</svg>
-							<span class="contacts__text">8558 Green Rd., LA</span>
-						</a></li>
-						<li class="contacts__item"><a href="" class="contacts__link">
-							<svg class="contacts__icon" aria-hidden="true">
-								<use xlink:href="/assets/img/svg/contact/phone.svg#link"></use>
-							</svg>
-							<span class="contacts__text">+1 (603) 555-0123</span>
-						</a></li>
-						<li class="contacts__item"><a href="" class="contacts__link">
-							<svg class="contacts__icon" aria-hidden="true">
-								<use xlink:href="/assets/img/svg/contact/clock.svg#link"></use>
-							</svg>
-							<span class="contacts__text">Mon–Sat: 9:00–23:00</span>
-						</a></li>
+						<li class="contacts__item">
+							<a href="https://maps.app.goo.gl/okd1rXwTDixUdJB59" class="contacts__link" target="_blank" rel="noopener noreferrer">
+								<svg class="contacts__icon" aria-hidden="true">
+									<use xlink:href="./assets/img/svg/contact/map.svg#link"></use>
+								</svg>
+								<span class="contacts__text">8558 Green Rd., LA</span>
+							</a>
+						</li>
+						<li class="contacts__item">
+							<a href="tel:+16035550123" class="contacts__link" target="_blank" rel="noopener noreferrer">
+								<svg class="contacts__icon" aria-hidden="true">
+									<use xlink:href="./assets/img/svg/contact/phone.svg#link"></use>
+								</svg>
+								<span class="contacts__text">+1 (603) 555-0123</span>
+							</a>
+						</li>
+						<li class="contacts__item">
+							<a href="" class="contacts__link">
+								<svg class="contacts__icon" aria-hidden="true">
+									<use xlink:href="./assets/img/svg/contact/clock.svg#link"></use>
+								</svg>
+								<span class="contacts__text">Mon–Sat: 9:00–23:00</span>
+							</a>
+						</li>
 					</ul>
 				</div>
 			</div>
 		</footer>
+
+		<script src="./assets/js/burger.js"></script>
+		<script src="./assets/js/theme.js"></script>
 	</body>
 </html>

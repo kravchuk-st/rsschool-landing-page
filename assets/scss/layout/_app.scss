@@ -38,12 +38,23 @@
 		width: 200px;
 		height: 64px;
 		padding: 12px 20px;
-		border: 1px solid var(--border-hover);
+		border: 1px solid var(--border-inverse);
 		border-radius: 100px;
+		transition: background-color .3s ease-in-out;
+
+		&:hover {
+			background-color: var(--bg-footer);
+
+			.icon {
+				fill: #e1d4c9;
+			}
+		}
 
 		.icon {
 			width: 122px;
 			height: 40px;
+			fill: var(--text);
+			transition: fill .3s ease-in-out;
 		}
 
 		&_gp {
