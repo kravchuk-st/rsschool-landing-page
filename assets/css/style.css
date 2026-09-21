@@ -118,6 +118,9 @@ body {
     margin-bottom: 40px;
     font-size: 32px;
   }
+  .menu .text-accent {
+    display: block;
+  }
 }
 .banner {
   padding-top: 15px;
@@ -387,7 +390,7 @@ body {
 }
 @media screen and (max-width: 830px) {
   .nav {
-    padding-top: 50px;
+    padding-top: 20px;
     position: fixed;
     z-index: 15;
     top: 85px;
@@ -754,6 +757,12 @@ body {
   margin-top: 39px;
 }
 
+@media screen and (max-width: 576px) {
+  .tabs__nav {
+    -moz-column-gap: 8px;
+         column-gap: 8px;
+  }
+}
 button {
   font-family: "Inter", "Verdana", sans-serif;
 }
