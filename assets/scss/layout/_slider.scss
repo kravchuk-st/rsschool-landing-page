@@ -63,7 +63,7 @@
 			max-width: 470px;
 			margin-top: 15px;
 			font-size: 16px;
-			font-weight: 500;
+			font-weight: 400;
 			line-height: 1.5;
 			text-align: center;
 		}
@@ -72,5 +72,30 @@
 			margin-top: 17px;
 			font-size: 24px;
 		}
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.carousel .slider__btn_prev {
+		left: 0;
+	}
+
+	.carousel .slider__btn_next {
+    right: 0px;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.slider__btn {
+		display: none;
+	}
+
+	.carousel .slider__pagination .bullet {
+		height: 4px;
+	}
+
+	.slide__img {
+		width: fit-content;
+		max-width: 100%;
 	}
 }

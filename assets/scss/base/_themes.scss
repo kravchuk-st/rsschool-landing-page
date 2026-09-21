@@ -45,7 +45,19 @@ body {
 
 @media screen and (max-width: 992px) {
   .wrapper {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .wrapper {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .title {
+    margin-bottom: 40px;
+    font-size: 32px;
   }
 }

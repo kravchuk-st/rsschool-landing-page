@@ -19,7 +19,7 @@
 		margin-top: -5px;
 		display: flex;
 		align-items: center;
-		column-gap: 22px;
+		column-gap: 23px;
 	}
 
 	.wrapper:not(:has(.nav.open)) .overlay {
@@ -30,5 +30,25 @@
 	.wrapper:has(.nav.open) .overlay {
 		opacity: 1;
 		visibility: visible;
+	}
+}
+
+.logo__img_dark {
+	display: none;
+}
+
+[data-theme="dark"] {
+  .logo__img_light {
+    display: none;
+  }
+
+  .logo__img_dark {
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 576px) {
+	.header .actions {
+		column-gap: 11px;
 	}
 }
