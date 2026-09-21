@@ -13,6 +13,7 @@ $breakpoint-desktop: 1024px;
 // Теми (мапа для генерації CSS-змінних)
 $themes: (
   light: (
+    body: #e0d4ca,
     bg: #e1d4c9,
     bg-footer: #665f55,
     text: #403f3d,
@@ -24,6 +25,7 @@ $themes: (
 
   ),
   dark: (
+    body: #292826,
     bg: #292826,
     bg-footer: #403f3d,
     text: #e1d4c9,

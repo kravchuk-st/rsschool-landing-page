@@ -1,3 +1,7 @@
+button {
+	font-family: 'Inter', 'Verdana', sans-serif;
+}
+
 .brn {
 	border: 1px solid #665f55;
 }
@@ -64,7 +68,7 @@
 		width: 36px;
 		height: 36px;
 		padding: 7px;
-		border-radius: 50%;
+		border-radius: 100px;
 		background-color: transparent;
 		transition: background-color 0.3s ease-in-out, fill .3s ease-in-out;
 
@@ -73,8 +77,7 @@
 		}
 
 		&_dark {
-			width: 34px;
-			height: 34px;
+			padding: 9px;
 			fill: var(--text);
 		}
 
@@ -97,7 +100,7 @@
 	.btn__icon {
 		width: 14px;
 		height: 13px;
-		fill: "none";
+		fill: none;
 		stroke: var(--text);
 		transition: stroke 0.3s ease-in-out;
 	}
@@ -116,9 +119,36 @@
 	}
 }
 
+.tabs__more {
+	width: 60px;
+	height: 60px;
+	display: none;
+	padding: 18px;
+	border: 1px solid var(--border-inverse);
+	border-radius: 50%;
+	stroke: var(--text);
+
+	&:hover .icon {
+		transform: rotate(90deg);
+	}
+
+	.icon {
+		width: 24px;
+		height: 24px;
+		stroke: var(--text);
+		transition: transform .3s ease-in-out;
+	}
+}
+
 @media screen and (max-width: 992px) {
 	.banner__link .icon {
 		display: inline-block;
+	}
+
+	.tabs__more {
+		display: block;
+		flex: 0 0 60px;
+		margin: 0 calc(50% - 30px);    
 	}
 }
 
@@ -129,17 +159,17 @@
 
 	.theme-btn {
 		padding: 5px 3px;
-		padding-right: 10px;
-		column-gap: 14px;
+		column-gap: 9px;
 
 		&__icon {
 			width: 44px;
 			height: 40px;
 
 			&_dark {
-				width: 32px;
-				height: 32px;
+    		padding: 10px;
 			}
 		}
 	}
 }
+
+.tabs__more[hidden] { display: none !important; }

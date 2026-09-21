@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Coffee House</title>
 		<link rel="shortcut icon" type="image/svg" href="../assets/img/favicon.svg">
 		<link rel="stylesheet" href="../assets/css/normalize.css">
@@ -27,20 +27,27 @@
 						<li class="nav__item"><a href="../#about" class="nav__link">About</a></li>
 						<li class="nav__item"><a href="../#app" class="nav__link">Mobile app</a></li>
 						<li class="nav__item"><a href="#footer" class="nav__link">Contact us</a></li>
+						<li class="nav__item nav__item_md">
+							<a href="./" class="nav__link">Menu 
+								<svg class="nav__icon" aria-hidden="true">
+									<use xlink:href="../assets/img/svg/coffee-cup.svg#cup"></use>
+								</svg>
+							</a>
+						</li>
 					</ul>
 				</nav>
 				<div class="actions">
 					<button class="theme-btn btn-reset" aria-label="Toggle theme">
 						<svg class="theme-btn__icon theme-btn__icon_light active" aria-hidden="true">
-							<use xlink:href="/assets/img/svg/sun.svg#sun"></use>
+							<use xlink:href="../assets/img/svg/sun.svg#sun"></use>
 						</svg>
 						<svg class="theme-btn__icon theme-btn__icon_dark" aria-hidden="true">
-							<use xlink:href="/assets/img/svg/moon.svg#moon"></use>
+							<use xlink:href="../assets/img/svg/moon.svg#moon"></use>
 						</svg>
 					</button>
 					<a href="./" class="menu-btn btn-reset"><span class="menu-btn__text">Menu</span>
 						<svg class="menu-btn__icon" aria-hidden="true">
-							<use xlink:href="/assets/img/svg/cup.svg#cup"></use>
+							<use xlink:href="../assets/img/svg/cup.svg#cup"></use>
 						</svg>
 					</a>
 					<button class="burger btn-reset" aria-label="open burger">
@@ -56,6 +63,10 @@
 			<section class="menu">
 				<div class="wrapper">
 					<h1 class="title">Behind each of our cups hides an <em class="text-accent">amazing surprise</em></h1>
+					<div class="tabs" data-tabs="tab">
+						<ul class="tabs__nav list-reset"></ul>
+						<div class="tabs__content"></div>
+					</div>
 				</div>
 			</section>
 		</main>
@@ -68,21 +79,21 @@
 					</h2>
 					<ul class="social__list list-reset">
 						<li class="social__item">
-							<a href="" class="social__link" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+							<a href="https://x.com/" class="social__link" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
 								<svg class="icon" aria-hidden="true">
 									<use xlink:href="../assets/img/svg/social/twitter.svg#link"></use>
 								</svg>
 							</a>
 						</li>
 						<li class="social__item">
-							<a href="" class="social__link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+							<a href="https://www.instagram.com/" class="social__link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
 								<svg class="icon" aria-hidden="true">
 									<use xlink:href="../assets/img/svg/social/instagram.svg#link"></use>
 								</svg>
 							</a>
 						</li>
 						<li class="social__item">
-							<a href="" class="social__link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+							<a href="https://www.facebook.com/" class="social__link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
 								<svg class="icon" aria-hidden="true">
 									<use xlink:href="../assets/img/svg/social/facebook.svg#link"></use>
 								</svg>
@@ -110,12 +121,12 @@
 							</a>
 						</li>
 						<li class="contacts__item">
-							<a href="" class="contacts__link">
+							<div class="contacts__link contacts__link_time">
 								<svg class="contacts__icon" aria-hidden="true">
 									<use xlink:href="../assets/img/svg/contact/clock.svg#link"></use>
 								</svg>
 								<span class="contacts__text">Mon–Sat: 9:00–23:00</span>
-							</a>
+							</div>
 						</li>
 					</ul>
 				</div>
@@ -124,5 +135,6 @@
 
 		<script src="../assets/js/burger.js"></script>
 		<script src="../assets/js/theme.js"></script>
+		<script type="module" src="../assets/js/draw-cards.js"></script>
 	</body>
 </html>

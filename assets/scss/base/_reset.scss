@@ -12,7 +12,9 @@ section {
 	display: none;
 }
 
-.disable-scroll {
-  overflow: hidden;
-  user-select: none;
+@media screen and (max-width: 830px) {
+  .disable-scroll {
+    overflow: hidden;
+    user-select: none;
+  }
 }

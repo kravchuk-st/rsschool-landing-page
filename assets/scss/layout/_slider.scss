@@ -13,6 +13,9 @@
 			top: calc(50% - 22px);
 			transform: translateY(-50%);
 			z-index: 5;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 
 			&_next {
 				right: 5px;

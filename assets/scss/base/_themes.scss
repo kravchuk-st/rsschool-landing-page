@@ -22,7 +22,7 @@ body {
   font-weight: 600;
   font-size: 16px;
   line-height: 1.25;
-  background-color: var(--bg);
+  background-color: var(--body);
   color: var(--text);
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
@@ -41,6 +41,10 @@ body {
 .text-accent {
   font-style: italic;
   color: #b0907a;
+}
+
+.menu {
+  padding-top: 15px;
 }
 
 @media screen and (max-width: 992px) {
