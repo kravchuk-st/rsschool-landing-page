@@ -90,9 +90,9 @@ async function getData() {
 
     tabsNav.innerHTML = categories.map(category => `
       <li class="tabs__nav-item">
-        <button class="tabs__nav-btn btn-reset" type="button">
+        <button class="tabs__nav-btn btn-reset" type="button" aria-label="Show more cards">
           <span class="tabs__nav-icon" aria-hidden="true">
-            <img src="../assets/img/categories/${category}.png" alt="" width="16" height="16">
+            <img src="../assets/img/categories/${category}.png" alt="arrow icon" width="16" height="16">
           </span>${category}
         </button>
       </li>
