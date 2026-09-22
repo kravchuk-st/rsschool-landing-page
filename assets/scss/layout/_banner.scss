@@ -1,0 +1,67 @@
+.banner {
+	padding-top: 15px;
+	.wrapper {
+		position: relative;
+		z-index: 0;
+		padding: 100px;
+		border-radius: 40px;
+		overflow: hidden;
+	}
+
+	&__content {
+		max-width: 530px;
+		display: flex;
+		flex-direction: column;
+		row-gap: 41px;
+		color: var(--inverse);
+	}
+
+	&__title {
+		font-size: 72px;
+		line-height: 1.05;
+	}
+
+	&__descr {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 1.5;
+	}
+
+	&__video {
+		position: absolute;
+		z-index: -1;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		height: 100%;
+		transform: translate(-50%, -50%);
+    object-fit: cover;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.banner {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+
+	.banner .wrapper {
+		padding: 100px 60px;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.banner {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+
+	.banner .wrapper {
+		padding: 60px 16px;
+	}
+
+	.banner__title {
+		font-size: 42px;
+		line-height: 1.15;
+	}
+}
