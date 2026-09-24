@@ -498,6 +498,7 @@ body {
   position: relative;
   z-index: 0;
   padding-bottom: 43px;
+  touch-action: pan-y;
 }
 .carousel .slider__wrapper {
   width: 100%;

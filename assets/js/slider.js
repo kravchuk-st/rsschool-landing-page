@@ -7,44 +7,46 @@ let currentItem = 0;
 let isEnabled = true;
 
 const updatePagination = () => {
-  pagination.forEach((bullet, i) => {
-    bullet.classList.toggle('active', i === currentItem);
-  });
-}
+	pagination.forEach((bullet, i) => {
+		bullet.classList.toggle('active', i === currentItem);
+	});
+};
 
 const changeCurrentItem = (n) => {
 	currentItem = (n + items.length) % items.length;
 	updatePagination();
-}
+};
 
 const hideItem = (direction) => {
 	isEnabled = false;
-	items[currentItem].classList.add(direction);
-	items[currentItem].addEventListener('animationend', function() {
-		this.classList.remove('active', direction);
-	});
-}
+	const item = items[currentItem];
+	item.classList.add(direction);
+	item.addEventListener('animationend', () => {
+		item.classList.remove('active', direction);
+	}, { once: true });
+};
 
 const showItem = (direction) => {
-	items[currentItem].classList.add('next', direction);
-	items[currentItem].addEventListener('animationend', function() {
-		this.classList.remove('next', direction);
-		this.classList.add('active');
+	const item = items[currentItem];
+	item.classList.add('next', direction);
+	item.addEventListener('animationend', () => {
+		item.classList.remove('next', direction);
+		item.classList.add('active');
 		isEnabled = true;
-	});
-}
+	}, { once: true });
+};
 
 const nextItem = (n) => {
 	hideItem('to-left');
 	changeCurrentItem(n + 1);
 	showItem('from-right');
-}
+};
 
 const previousItem = (n) => {
 	hideItem('to-right');
 	changeCurrentItem(n - 1);
 	showItem('from-left');
-}
+};
 
 prevSlideBtn.addEventListener('click', () => {
 	if (isEnabled) {
@@ -59,106 +61,70 @@ nextSlideBtn.addEventListener('click', () => {
 });
 
 pagination.forEach((bullet, i) => {
-  bullet.addEventListener('click', () => {
-    if (!isEnabled || i === currentItem) return;
+	bullet.addEventListener('click', () => {
+		if (!isEnabled || i === currentItem) return;
 
-    if (i > currentItem) {
-      hideItem('to-left');
-      changeCurrentItem(i);
-      showItem('from-right');
-    } else {
-      hideItem('to-right');
-      changeCurrentItem(i);
-      showItem('from-left');
-    }
-  });
+		if (i > currentItem) {
+			hideItem('to-left');
+			changeCurrentItem(i);
+			showItem('from-right');
+		} else {
+			hideItem('to-right');
+			changeCurrentItem(i);
+			showItem('from-left');
+		}
+	});
 });
 
-const swipeDetect = (el) => {
-  
-	let surface = el;
+const swipeDetect = (surface) => {
 	let startX = 0;
 	let startY = 0;
-	let distX = 0;
-	let distY = 0;
 	let startTime = 0;
-	let elapsedTime = 0;
 
-	let threshold = 150;
-	let restraint = 100;
-	let allowedTime = 300;
+	const threshold = 120;
+	const restraint = 100;
+	const allowedTime = 300;
+
+	const start = (x, y) => {
+		startX = x;
+		startY = y;
+		startTime = Date.now();
+	};
+
+	const end = (x, y) => {
+		const distX = x - startX;
+		const distY = y - startY;
+		const elapsedTime = Date.now() - startTime;
+
+		if (!isEnabled || elapsedTime > allowedTime) return;
+		if (Math.abs(distX) < threshold || Math.abs(distY) > restraint) return;
+
+		if (distX > 0) {
+			previousItem(currentItem);
+		} else {
+			nextItem(currentItem);
+		}
+	};
 
 	surface.addEventListener('mousedown', (e) => {
-		startX = e.pageX;
-		startY = e.pageY;
-		startTime = new Date().getTime();
+		start(e.pageX, e.pageY);
 		e.preventDefault();
-	}, false);
+	});
 
 	surface.addEventListener('mouseup', (e) => {
-		distX = e.pageX - startX;
-		distY = e.pageY - startY;
-		elapsedTime = new Date().getTime() - startTime;
-		if (elapsedTime <= allowedTime){
-			if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){
-				if ((distX > 0)) {
-					if (isEnabled) {
-						previousItem(currentItem);
-					}
-				} else {
-					if (isEnabled) {
-						nextItem(currentItem);
-					}
-				}
-			}
-		}
+		end(e.pageX, e.pageY);
 		e.preventDefault();
-	}, false);
+	});
 
 	surface.addEventListener('touchstart', (e) => {
-		if (e.target.classList.contains('arrow') || e.target.classList.contains('control')) {
-			if (e.target.classList.contains('left')) {
-				if (isEnabled) {
-					previousItem(currentItem);
-				}
-			} else {
-				if (isEnabled) {
-					nextItem(currentItem);
-				}
-			}
-		}
-			let touchObj = e.changedTouches[0];
-			startX = touchObj.pageX;
-			startY = touchObj.pageY;
-			startTime = new Date().getTime();
-			e.preventDefault();
-	}, false);
-
-	surface.addEventListener('touchmove', (e) => {
-			e.preventDefault();
-	}, false);
+		const touch = e.changedTouches[0];
+		start(touch.pageX, touch.pageY);
+	}, { passive: true });
 
 	surface.addEventListener('touchend', (e) => {
-			let touchObj = e.changedTouches[0];
-			distX = touchObj.pageX - startX;
-			distY = touchObj.pageY - startY;
-			elapsedTime = new Date().getTime() - startTime;
-			if (elapsedTime <= allowedTime){
-					if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){
-							if ((distX > 0)) {
-								if (isEnabled) {
-									previousItem(currentItem);
-								}
-							} else {
-								if (isEnabled) {
-									nextItem(currentItem);
-								}
-							}
-					}
-			}
-			e.preventDefault();
-	}, false);
-}
-
+		const touch = e.changedTouches[0];
+		end(touch.pageX, touch.pageY);
+	}, { passive: true });
+};
 
 swipeDetect(slider);
