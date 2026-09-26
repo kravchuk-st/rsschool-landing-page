@@ -1,4 +1,5 @@
 import { Tabs } from './tabs.js';
+import { Modal } from './modal.js';
 
 const PAGE_SIZE = 4;
 const mobileQuery = window.matchMedia('(max-width: 991.98px)');
@@ -11,10 +12,13 @@ let categories = [];
 let productsByCategory = {};
 let mobileCounts = [];
 let panels = [];
+let productModal = null;
 
 const cardTemplate = (product, category, i) => `
-  <button class="tabs__content-btn card btn-reset" type="button">
-    <img class="card__img" src="../assets/img/products/${category}/${category}-${i + 1}.avif" alt="${product.name}">
+  <button class="tabs__content-btn card btn-reset" type="button" data-product='${JSON.stringify(product).replace(/'/g, "&apos;")}' data-img="${i + 1}">
+    <div class="card__img">
+      <img class="card__img-picture" src="../assets/img/products/${category}/${category}-${i + 1}.avif" alt="${product.name}">
+    </div>
     <div class="card__body">
       <p class="card__title">${product.name}</p>
       <p class="card__descr">${product.description}</p>
@@ -62,11 +66,19 @@ const loadMore = (i, btn) => {
 }
 
 tabsContent.addEventListener('click', (e) => {
-  const btn = e.target.closest('.tabs__more');
-  if (!btn) return;
+  const moreBtn  = e.target.closest('.tabs__more');
+  if (moreBtn) {
+    const i = panels.indexOf(moreBtn.closest('.tabs__panel'));
+    if (i !== -1) loadMore(i, moreBtn);
+    return;
+  }
 
-  const i = panels.indexOf(btn.closest('.tabs__panel'));
-  if (i !== -1) loadMore(i, btn);
+  const card = e.target.closest('.card');
+  if (card) {
+    const product = JSON.parse(card.dataset.product);
+    const imgId = card.dataset.img;
+    productModal.open(product, imgId);
+  }
 });
 
 async function getData() {
@@ -78,6 +90,7 @@ async function getData() {
     }
 
     const data = await response.json();
+    
 
     categories = [...new Set(data.map(el => el.category))];
     productsByCategory = Object.fromEntries(
@@ -103,6 +116,7 @@ async function getData() {
     panels.forEach((_, i) => renderPanel(i));
 
     new Tabs('tab');
+    productModal = new Modal('#modal');
 
     mobileQuery.addEventListener('change', () => {
       panels.forEach((_, i) => renderPanel(i));

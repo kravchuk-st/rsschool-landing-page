@@ -22,7 +22,7 @@ body {
   font-weight: 600;
   font-size: 16px;
   line-height: 1.25;
-  background-color: var(--body);
+  background-color: var(--bg);
   color: var(--text);
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
@@ -53,6 +53,13 @@ body {
     padding-right: 40px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  body {
+    padding-top: 84px;
+  }
+}
+
 
 @media screen and (max-width: 576px) {
   .wrapper {

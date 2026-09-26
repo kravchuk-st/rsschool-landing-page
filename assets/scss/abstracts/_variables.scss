@@ -16,23 +16,26 @@ $themes: (
     body: #e0d4ca,
     bg: #e1d4c9,
     bg-footer: #665f55,
+    bg-modal: #e1d4c9,
     text: #403f3d,
     accent: #a9754f,
     inverse: #e1d4c9,
     border: #c1b6ad,
     border-inverse: #665f55,
     overlay: #403f3d80,
-
+    label: #665f55,
   ),
   dark: (
     body: #292826,
     bg: #292826,
     bg-footer: #403f3d,
+    bg-modal: #403f3d,
     text: #e1d4c9,
     accent: #b0907a,
     inverse: #e1d4c9,
     border: #665f55,
     border-inverse: #c1b6ad,
-    overlay: #29282680
+    overlay: #29282680,
+    label: #292826,
   )
 );

@@ -12,7 +12,12 @@ section {
 	display: none;
 }
 
-@media screen and (max-width: 830px) {
+.lock {
+  overflow: hidden;
+  user-select: none;
+}
+
+@media screen and (max-width: 768px) {
   .disable-scroll {
     overflow: hidden;
     user-select: none;

@@ -12,20 +12,25 @@ button {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	column-gap: 8px;
 	color: var(--text);
 	background-color: var(--bg);
 	border-radius: 100px;
 
 	& .icon {
-		width: 20px;
+		margin-left: 0;
+		width: 0;
 		height: 20px;
-		display: none;
+		opacity: 0;
+		visibility: hidden;
 		stroke: var(--text);
+		transition: .45s ease-in-out;
 	}
 
 	&:hover .icon {
-		display: block;
+		margin-left: 8px;
+		width: 20px;
+		opacity: 1;
+		visibility: visible;
 	}
 }
 
@@ -153,10 +158,6 @@ button {
 }
 
 @media screen and (max-width: 830px) {
-	.menu-btn {
-		display: none;
-	}
-
 	.theme-btn {
 		padding: 5px 3px;
 		column-gap: 9px;
@@ -169,6 +170,12 @@ button {
     		padding: 10px;
 			}
 		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.menu-btn {
+		display: none;
 	}
 }
 
