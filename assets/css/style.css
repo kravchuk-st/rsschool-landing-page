@@ -1012,7 +1012,10 @@ button {
 
 @media screen and (max-width: 992px) {
   .banner__link .icon {
-    display: inline-block;
+    margin-left: 8px;
+    width: 20px;
+    opacity: 1;
+    visibility: visible;
   }
   .tabs__more {
     display: block;
